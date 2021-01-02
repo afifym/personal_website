@@ -8,91 +8,112 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="./media/icon_5.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="./images/icon_5.png" />
+    <link rel="stylesheet" href="./styles/styles.css" />
   </head>
 
   <body>
     <!-- HEADER -->
-    <div id="header">
-      <nav class="navigation">
-        <ul>
-          <li><a href="#profile">ABOUT</a></li>
-          <li><a href="#skills">SKILLS</a></li>
-          <li><a href="#projects">PROJECTS</a></li>
+    <header id="header">
+      <nav class="header-navigation">
+        <ul class="navigation-list">
+          <li>
+            <a href="#profile" class="nav-link" data-link="profile">ABOUT</a>
+          </li>
+          <li>
+            <a href="#skills" class="nav-link" data-link="skills">SKILLS</a>
+          </li>
+          <li>
+            <a href="#projects" class="nav-link" data-link="projects"
+              >PROJECTS</a
+            >
+          </li>
         </ul>
       </nav>
-      <img src="./media/logo_afify.png" alt="ImageNotLoaded" />
-      <div class="btn-book">
-        <button
-          onclick="window.open('https://calendly.com/mohamedafify/30min')"
-          type="button"
-        >
-          BOOK A MEETING
-        </button>
-      </div>
-    </div>
+
+      <!-- <div class="btn-book"> -->
+      <button
+        onclick="window.open('https://calendly.com/mohamedafify/30min')"
+        type="button"
+        class="btn-book"
+      >
+        BOOK A MEETING
+      </button>
+      <!-- </div> -->
+    </header>
 
     <!-- PROFILE -->
-    <div id="profile">
-      <img src="./media/me.png" alt="ImageNotLoaded" />
+    <section class="main" id="profile">
+      <picture>
+        <source srcset="./images/me-1000.webp">
+        <img class="photo" src="./images/me-full.png" alt="ImageNotLoaded" />
+      </picture>
 
-      <div class="about">
-        <h1>Hi there! I'm Mohamed</h1>
-        <p>
-          I'm a computer vision developer with a wide skill set in image
-          processing and computer vision in addition to a solid experience in
-          training, finetuning, and testing deep learning models for object
-          classification, detection, and segmentation.
-        </p>
-        <button
-          onclick="window.open('https://drive.google.com/drive/folders/12CyLCmR8qO1g3pTxp9DJZI7FtSS7MEQg?usp=sharing')"
-          type="button"
-        >
-          My Resume
-        </button>
-      </div>
-    </div>
+      <!-- <div class="about"> -->
+      <h1 class="profile-title">
+        Hello, I'm <span>Mohamed Afify</span><br />I'm a Web Developer
+      </h1>
+    </section>
 
     <!-- SKILLS -->
-    <div id="skills">
-      <section class="vision">
-        <h1>Computer Vision</h1>
-        <ul>
-          <li>Object Detection</li>
-          <li>Object Classification</li>
-          <li>Segmentation</li>
-          <li>Feature Processing Techniques</li>
-          <li>TensorRT</li>
-          <li>TensorFlow</li>
-          <li>Python</li>
-          <li>C++/C</li>
-          <li>Numpy</li>
-          <li>OpenCV</li>
-          <li>Object Detection API</li>
-          <li>Ubuntu</li>
-        </ul>
-      </section>
+    <section class="main" id="skills">
+      <h1 class="main-h1">Skills</h1>
+      <div class="skills-container">
+        <section class="skills-card">
+          <h3 class="skills-card-title">Software Engineering</h3>
+          <ul class="skills-card-list">
+            <li>Git/GitHub</li>
+            <li>Problem Solving</li>
+            <li>OOP</li>
+            <li>Data Structures</li>
+            <li>Algorithms</li>
+            <li>Ubuntu</li>
+          </ul>
+        </section>
+       
 
-      <section class="web">
-        <h1>Web Design</h1>
-        <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>JavaScript</li>
-          <li>Graphic Design</li>
-          <li>Adobe Illustrator</li>
-          <li>Adobe Photoshop</li>
-        </ul>
-      </section>
-    </div>
+        <section class="skills-card">
+          <h3 class="skills-card-title">Web Development</h3>
+          <ul class="skills-card-list">
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>ES6</li>
+            <li>Node.js</li>
+            <li>SASS</li>
+            <li>Responsive Design</li>
+            <li>Graphic Design</li>
+            <li>Figma</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+          </ul>
+        </section>
+
+        <section class="skills-card">
+          <h3 class="skills-card-title">Deep Learning</h3>
+          <ul class="skills-card-list">
+            <li>Object Detection</li>
+            <li>Object Classification</li>
+            <li>Segmentation</li>
+            <li>Feature Processing Techniques</li>
+            <li>TensorRT</li>
+            <li>TensorFlow</li>
+            <li>Python</li>
+            <li>C++/C</li>
+            <li>Numpy</li>
+            <li>OpenCV</li>
+            <li>Object Detection API</li>
+          </ul>
+        </section>
+      </div>
+    </section>
 
     <!-- PROJECTS -->
-    <div id="projects">
-      <div class="project-1">
-        <img src="./media/bump.jpg" alt="bumpDetector" />
-        <div>
-          <h1>> Road Bump Detector</h1>
+    <section class="main" id="projects">
+      <h1 class="main-h1">Projects</h1>
+      <div class="project">
+        <div class="project-details">
+          <h1>Road Bump Detector</h1>
           <p>
             Achieved a solution for the real-world problem of unregulated Road
             Bumps | Sponsored by Valeo
@@ -100,31 +121,33 @@
           <button
             onclick="window.open('https://github.com/afifym/road_bump_detection')"
             type="button"
+            class="btn-code"
           >
             View Code
           </button>
         </div>
+        <img src="./images/bump.jpg" alt="bumpDetector" class="project-img" />
       </div>
 
-      <div class="project-2">
-        <img src="./media/sudoku.jpg" alt="sudoku" />
-
-        <div>
-          <h1>> Augmented-Reality <br />&nbsp Sudoku Solver</h1>
+      <div class="project">
+        <div class="project-details">
+          <h1>Augmented-Reality Sudoku Solver</h1>
           <p>Implemented an Augmented Reality Sudoku Solver in Python</p>
           <button
             onclick="window.open('https://github.com/afifym/augmented_reality_sudoku_solver')"
             type="button"
+            class="btn-code"
           >
             View Code
           </button>
         </div>
+        <img src="./images/sudoku.jpg" alt="sudoku" class="project-img" />
       </div>
-    </div>
+    </section>
 
     <!-- CONTACT -->
-    <footer class="contact">
-      <h1>mohamed.afify323@gmail.com</h1>
+    <footer id="contact">
+      <h3>mohamed.afify323@gmail.com</h1>
       <ul>
         <li>
           <button onclick="window.open('https://bit.ly/2Q9ij6w')" type="button">
@@ -156,6 +179,7 @@
           </button>
         </li>
       </ul>
+      <p>&#169; 2020 Mohamed Afify</p>
     </footer>
 
     <script src="https://unpkg.com/scrollreveal"></script>
