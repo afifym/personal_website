@@ -345,7 +345,8 @@ body {
   font-size: 14px;
   font-family: PopRegular;
   color: #f5f5f5;
-  width: 30%;
+  /*width: 30%;*/
+  padding: 0.2em 2em;
   -ms-grid-column-align: center;
       justify-self: center;
   margin: auto;
@@ -491,7 +492,11 @@ body {
   #projects .project .project-details {
     width: 100%;
     margin: 15px;
+
   }
+
+
+
   #projects .project .project-details h1 {
     font-size: 25px;
     margin: 15px;
@@ -501,6 +506,12 @@ body {
     margin: 15px;
     color: #f5f5f5;
   }
+
+    #projects .project .project-details .btn-code{
+    	/*padding: 0.5em;*/
+    }
+
+
   #projects .project .project-img {
     position: absolute;
     min-width: 80%;
