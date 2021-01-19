@@ -453,6 +453,10 @@ body {
   #header .btn-book {
     width: 50%;
   }
+  #profile{
+  	height: 90vh;
+
+  }
   #profile .profile-title {
     font-size: 1.5rem;
     margin: 15px;
