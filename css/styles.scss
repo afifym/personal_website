@@ -1,0 +1,312 @@
+@import "./utilities";
+
+html {
+  font-size: 16px;
+}
+
+body {
+  color: $dark-color;
+  background-color: $bright-color;
+  font-family: $font-primary;
+  overflow-x: hidden;
+}
+
+// HEADER
+#header {
+  @include flex(row, space-evenly, center);
+  width: 100%;
+  min-height: 20vh;
+  margin: auto;
+  position: absolute;
+
+  .navigation-list {
+    @include flex(row, space-around, none);
+    font-family: $font-primary;
+
+    a {
+      color: $bright-color;
+      transition: all ease 0.2s;
+      margin: 0 1em;
+      font-size: 1rem;
+
+      &:hover {
+        color: $primary-color;
+        border-bottom: 1px solid $primary-color;
+      }
+    }
+  }
+
+  // Button CHILD
+  .btn-book {
+    @include btnStroke();
+    @include btnStrokeHover();
+
+    width: 18%;
+    height: 40px;
+    border-radius: 4px;
+    transition: background 0.4s;
+  }
+}
+
+// PROFILE
+#profile {
+  .background {
+    position: absolute;
+    z-index: -1;
+    min-width: 100%;
+    max-height: 100%;
+    top: 0;
+    left: 0;
+  }
+  background-image: linear-gradient(120deg, #494444, $dark-color);
+
+  @include flex(column-reverse, none, center);
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 150px;
+  color: $bright-color;
+  border-bottom: 4px solid $primary-color;
+
+  .profile-title {
+    position: absolute;
+    top: 35%;
+    font-size: 2rem;
+    font: $font-primary;
+    text-align: center;
+    span {
+      color: $primary-color;
+    }
+  }
+
+  picture {
+    @include flex(row, center, none);
+    width: 60%;
+    max-width: 300px;
+  }
+
+  .photo {
+    width: 100%;
+    position: relative;
+    bottom: -10%;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+  }
+}
+
+#skills {
+  @include flex(column, space-around, center);
+  height: 100vh;
+  width: 100%;
+
+  color: $dark-color;
+
+  .skills-container {
+    @include flex(row, space-around, none);
+    width: 90%;
+  }
+
+  .skills-card {
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    width: 30%;
+    display: block;
+  }
+
+  .skills-card-title {
+    height: 40px;
+    width: 100%;
+    line-height: 40px;
+
+    text-align: center;
+    font-size: 1.2rem;
+    color: $bright-color;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px 20px;
+
+    background-color: $dark-color;
+  }
+
+  .skills-card-list {
+    @include flex(row, center, none);
+
+    flex-wrap: wrap;
+    margin: 10px;
+
+    li {
+      cursor: pointer;
+      font-size: 1rem;
+      margin: 0.4em 0.4em;
+      padding: 10px;
+
+      text-align: center;
+      border: 1px solid $dark-color;
+
+      border-radius: 30px;
+      transition: transform 0.4s;
+
+      &:hover {
+        transform: translateY(-10px);
+      }
+    }
+  }
+}
+
+#projects {
+  @include flex(column, space-evenly, center);
+  width: 100%;
+  height: 150vh;
+
+  .project {
+    @include flex(row, space-between, center);
+    width: 80%;
+    height: 25%;
+
+    border: 1px solid $dark-color;
+    border-radius: 30px;
+    overflow: hidden;
+
+    .project-img {
+      width: 25%;
+    }
+
+    .project-details {
+      width: 45%;
+      margin-left: 10%;
+
+      p {
+        font-size: 1rem;
+        margin: 0.6em 0;
+      }
+
+      .btn-code {
+        @include btnFill();
+        width: 30%;
+        justify-self: center;
+        margin: auto;
+
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+
+        border-radius: 10px;
+      }
+    }
+  }
+}
+
+#contact {
+  @include flex(column, space-evenly, center);
+  height: 40vh;
+  margin-top: 50px;
+  padding: 50px;
+
+  color: $bright-color;
+  background-color: $dark-color;
+
+  ul {
+    @include flex(row, space-around, center);
+    width: 100px;
+
+    button {
+      background: none;
+      border: none;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    svg {
+      width: 30px;
+      height: auto;
+      fill: $bright-color;
+
+      transition: all ease 0.2s;
+
+      &:hover {
+        fill: $primary-color;
+      }
+    }
+  }
+}
+
+// #####
+// MEDIA
+// #####
+@media (max-width: 768px) {
+  #header {
+    @include flex(column, space-between, center);
+    height: 25vh;
+
+    .header-navigation {
+      @include flex(column, center, center);
+      height: 50%;
+      width: 100%;
+
+      background-color: rgba(30, 39, 51, 0.5);
+    }
+
+    .btn-book {
+      width: 50%;
+    }
+  }
+
+  #profile {
+    .profile-title {
+      font-size: 1.5rem;
+      margin: 15px;
+    }
+
+    .photo {
+      width: 85%;
+    }
+  }
+
+  #skills {
+    height: 220vh;
+
+    .skills-container {
+      @include flex(column, space-evenly, center);
+      height: 100%;
+
+      .skills-card {
+        width: 90%;
+      }
+    }
+  }
+
+  #projects {
+    height: 200vh;
+    margin-top: 100px;
+
+    .project {
+      border: none;
+
+      .project-details {
+        width: 100%;
+        margin: 15px;
+
+        h1 {
+          font-size: 25px;
+          margin: 15px;
+          color: $bright-color;
+        }
+
+        p {
+          margin: 15px;
+          color: $bright-color;
+        }
+      }
+
+      .project-img {
+        position: absolute;
+        min-width: 80%;
+        z-index: -1;
+        filter: brightness(30%);
+        border-radius: 20px;
+      }
+    }
+  }
+}
