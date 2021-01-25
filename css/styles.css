@@ -345,8 +345,7 @@ body {
   font-size: 14px;
   font-family: PopRegular;
   color: #f5f5f5;
-  /*width: 30%;*/
-  padding: 0.2em 2em;
+  width: 30%;
   -ms-grid-column-align: center;
       justify-self: center;
   margin: auto;
@@ -453,10 +452,6 @@ body {
   #header .btn-book {
     width: 50%;
   }
-  #profile{
-  	height: 90vh;
-
-  }
   #profile .profile-title {
     font-size: 1.5rem;
     margin: 15px;
@@ -496,11 +491,7 @@ body {
   #projects .project .project-details {
     width: 100%;
     margin: 15px;
-
   }
-
-
-
   #projects .project .project-details h1 {
     font-size: 25px;
     margin: 15px;
@@ -510,12 +501,6 @@ body {
     margin: 15px;
     color: #f5f5f5;
   }
-
-    #projects .project .project-details .btn-code{
-    	/*padding: 0.5em;*/
-    }
-
-
   #projects .project .project-img {
     position: absolute;
     min-width: 80%;
