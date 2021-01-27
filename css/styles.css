@@ -509,6 +509,9 @@ body {
     width: 100%;
     background-color: rgba(30, 39, 51, 0.5);
   }
+  #profile {
+    height: 95vh;
+  }
   #profile .profile-title {
     font-size: 1.5rem;
     margin-bottom: 1.5em;
