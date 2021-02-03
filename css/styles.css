@@ -315,7 +315,7 @@ body {
 }
 
 #projects {
-  height: 110vh;
+  height: 150vh;
   margin: 10em 0;
 }
 
@@ -370,6 +370,7 @@ body {
   height: 46%;
   width: 100%;
   padding: 1em 3em;
+  margin: 1em 0;
   border-radius: 30px;
   -webkit-box-shadow: 10px 40px 50px #d8dce7;
           box-shadow: 10px 40px 50px #d8dce7;
@@ -383,6 +384,11 @@ body {
 #projects .project-item.rota {
   background-color: #2f333e;
   color: white;
+}
+
+#projects .project-item.word-search {
+  color: white;
+  background-image: linear-gradient(45deg, #303439 9.64%, #6c8bb9 78.68%);
 }
 
 #projects .project-item img {
