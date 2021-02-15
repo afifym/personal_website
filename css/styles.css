@@ -41,10 +41,6 @@ li {
   border-bottom: 3px solid #1e2733;
 }
 
-html {
-  font-size: 16px;
-}
-
 body {
   color: #1e2733;
   background-color: #f5f5f5;
@@ -68,30 +64,15 @@ body {
 
 .container {
   width: 90%;
-  height: 100%;
-  margin: auto;
+  margin: 0 auto;
 }
 
-#header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: none;
-      -ms-flex-align: none;
-          align-items: none;
-  height: 20vh;
+#navbar {
   width: 100%;
   position: absolute;
 }
 
-#header .container {
+#navbar .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -105,9 +86,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 3em;
 }
 
-#header .navigation-list {
+#navbar .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -123,21 +105,22 @@ body {
   font-family: PopLight;
 }
 
-#header .navigation-list li {
+#navbar .nav-list li {
+  cursor: pointer;
+  height: 30px;
   -webkit-transition: all ease 0.2s;
   transition: all ease 0.2s;
-  height: 30px;
 }
 
-#header .navigation-list li:hover {
+#navbar .nav-list li:hover {
   border-bottom: 1px solid #4a90e2;
 }
 
-#header .navigation-list li:hover a {
+#navbar .nav-list li:hover a {
   color: #4a90e2;
 }
 
-#header .navigation-list a {
+#navbar .nav-list a {
   color: #f5f5f5;
   font-size: 0.9rem;
   margin: 0 1em;
@@ -145,7 +128,7 @@ body {
   transition: all ease 0.2s;
 }
 
-#header .btn-book {
+#navbar .btn-book {
   background: none;
   border: 1px solid #4a90e2;
   font-size: 14px;
@@ -157,7 +140,7 @@ body {
   transition: background 0.4s;
 }
 
-#header .btn-book:hover {
+#navbar .btn-book:hover {
   background: #4a90e2;
   color: #f5f5f5;
   -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
@@ -165,7 +148,6 @@ body {
 }
 
 #profile {
-  height: 100vh;
   background-image: linear-gradient(120deg, #494444, #1e2733);
   border-bottom: 4px solid #4a90e2;
 }
@@ -184,11 +166,15 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 100vh;
+  width: 100%;
   color: #f5f5f5;
 }
 
 #profile .profile-title {
-  margin-bottom: 0.8em;
+  width: 100%;
+  position: absolute;
+  top: 35%;
   font-size: 2rem;
   font: PopLight;
   text-align: center;
@@ -223,11 +209,6 @@ body {
           filter: drop-shadow(10px 5px 50px #252525);
 }
 
-#skills {
-  height: 80vh;
-  margin: 10em 0;
-}
-
 #skills .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -241,6 +222,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 8em 0;
+  padding-top: 10em;
   color: #1e2733;
 }
 
@@ -257,10 +240,14 @@ body {
   -webkit-box-align: none;
       -ms-flex-align: none;
           align-items: none;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 #skills .skills-item {
-  width: 31%;
+  width: 30%;
+  min-width: 300px;
+  margin: 1em 1em;
   -webkit-box-shadow: 10px 40px 50px #d1d1d1;
           box-shadow: 10px 40px 50px #d1d1d1;
   border-radius: 20px;
@@ -314,11 +301,6 @@ body {
           transform: translateY(-10px);
 }
 
-#projects {
-  height: 150vh;
-  margin: 10em 0;
-}
-
 #projects .container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -333,6 +315,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 10em 0;
   width: 70%;
 }
 
@@ -350,7 +333,6 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 80%;
 }
 
 #projects .project-item {
@@ -367,14 +349,53 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 46%;
-  width: 100%;
-  padding: 1em 3em;
-  margin: 1em 0;
+  min-width: 700px;
+  min-height: 300px;
+  padding: 2em 3em;
+  margin: 1.5em 2em;
   border-radius: 30px;
   -webkit-box-shadow: 10px 40px 50px #d8dce7;
           box-shadow: 10px 40px 50px #d8dce7;
   border: 2px solid #4a90e2;
+}
+
+#projects .project-item .project-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 65%;
+}
+
+#projects .project-item .project-about {
+  width: 80%;
+  height: 100%;
+}
+
+#projects .project-item .project-about .project-title {
+  font-size: 1.5rem;
+}
+
+#projects .project-item .project-icon {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  width: 60px;
+}
+
+#projects .project-item .project-icon img {
+  width: 60px;
+}
+
+#projects .project-item.kanban {
+  background-color: #eef3f9;
 }
 
 #projects .project-item.fyyur {
@@ -395,10 +416,6 @@ body {
   max-width: 200px;
 }
 
-#projects .project-item .project-text {
-  width: 60%;
-}
-
 #projects .project-item .project-details {
   font-size: 0.8rem;
   margin: 1em 0;
@@ -416,9 +433,8 @@ body {
 }
 
 #contact {
-  height: 40vh;
   margin-top: 50px;
-  padding: 50px;
+  padding: 4em 0;
   color: #f5f5f5;
   background-color: #1e2733;
   border-top: 4px solid #4a90e2;
@@ -454,6 +470,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   width: 100px;
+  margin: 1em 0;
 }
 
 #contact ul button {
@@ -478,10 +495,7 @@ body {
 }
 
 @media (max-width: 768px) {
-  #header {
-    height: 25vh;
-  }
-  #header .container {
+  #navbar .container {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -496,22 +510,11 @@ body {
         -ms-flex-align: center;
             align-items: center;
     width: 100%;
+    padding: 0;
   }
-  #header .header-navigation {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 50%;
+  #navbar .nav-list {
+    padding: 2em 0;
+    margin-bottom: 2em;
     width: 100%;
     background-color: rgba(30, 39, 51, 0.5);
   }
@@ -519,36 +522,14 @@ body {
     height: 95vh;
   }
   #profile .profile-title {
-    font-size: 1.5rem;
-    margin-bottom: 1.5em;
+    top: 40%;
+    font-size: 1.7rem;
   }
   #profile .photo {
     width: 80%;
   }
   #skills {
     height: 220vh;
-  }
-  #skills .skills-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-pack: space-evenly;
-        -ms-flex-pack: space-evenly;
-            justify-content: space-evenly;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    height: 100%;
-  }
-  #skills .skills-list .skills-item {
-    width: 90%;
-  }
-  #projects {
-    height: 210vh;
   }
   #projects .container {
     width: 90%;
@@ -561,7 +542,7 @@ body {
     -ms-flex-pack: distribute;
         justify-content: space-around;
     height: 48%;
-    padding: 1em 3em;
+    min-width: auto;
   }
   #projects .project-item .project-text {
     display: -webkit-box;
@@ -577,11 +558,15 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    width: 100%;
-    margin: 15px;
-  }
-  #projects .project-item .project-text .project-details {
     text-align: center;
+    width: 100%;
+  }
+  #projects .project-item .project-text .project-about {
+    margin: 2em 0;
+    width: 100%;
+  }
+  #projects .project-item .project-text .project-icon {
+    margin: 0 auto;
   }
 }
 /*# sourceMappingURL=styles.css.map */
